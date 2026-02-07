@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Triyasha ❤️</title>
+
+<style>
+body{
+    margin:0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg,#ff758c,#ff7eb3);
+    color:white;
+    text-align:center;
+    overflow:hidden;
+}
+.page{
+    display:none;
+    height:100vh;
+    width:100vw;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+.active{display:flex;}
+
+img{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid white;
+}
+
+h1,h2{margin:15px;}
+
+button{
+    padding:15px 35px;
+    font-size:20px;
+    border:none;
+    border-radius:30px;
+    margin:10px;
+    cursor:pointer;
+}
+
+#yesBtn{background:#00ff9d;}
+#noBtn{background:#ff3b3b;}
+
+#noText{
+    margin-top:15px;
+    font-size:18px;
+}
+
+video{
+    width:90%;
+    max-width:400px;
+    border-radius:20px;
+    margin-top:20px;
+}
+
+/* balloons */
+.ballon{
+    position:absolute;
+    bottom:-100px;
+    width:40px;
+    height:50px;
+    border-radius:50%;
+    animation:fly 6s linear infinite;
+}
+@keyframes fly{
+    to{transform:translateY(-120vh);}
+}
+
+/* firecracker */
+.firework{
+    position:absolute;
+    width:6px;
+    height:6px;
+    background:white;
+    border-radius:50%;
+    animation:explode 1s linear forwards;
+}
+@keyframes explode{
+    to{transform:scale(30);opacity:0;}
+}
+
+.flash{
+    animation:flash 0.2s alternate 6;
+}
+@keyframes flash{
+    from{background:#fff;}
+    to{background:#ff0055;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- AUDIO -->
+<audio id="bgm1" src="bgm1.mp3" loop></audio>
+<audio id="bgm2" src="bgm2.mp3" loop></audio>
+<audio id="click" src="click.mp3"></audio>
+<audio id="noSound" src="no.mp3"></audio>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+    <img src="triyasha.jpg">
+    <h1>TRIYASHA</h1>
+    <h2>Will You Be My Valentine? 💖</h2>
+
+    <div>
+        <button id="yesBtn">YES</button>
+        <button id="noBtn">NO</button>
+    </div>
+
+    <p id="noText"></p>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+    <h1>🎉🎉🎉</h1>
+    <h2>I LOVE U TRIYASHA ❤️<br>PLEASE MARRY ME 💍</h2>
+    <video src="myvideo.mp4" autoplay loop muted></video>
+    <button onclick="goBack()">⬅ BACK</button>
+</div>
+
+<script>
+const bgm1=document.getElementById("bgm1");
+const bgm2=document.getElementById("bgm2");
+const click=document.getElementById("click");
+const noSound=document.getElementById("noSound");
+
+bgm1.play();
+
+/* NO dialogues (ONLY original ones) */
+let noLines=[
+"এরকম কোরো না",
+"আমার মন ভেঙো না",
+"আমি তোকে সুখেই রাখবো",
+"তুই দিন দিন পাপী হয়ে যাচ্ছিস কেন?",
+"NO তে ক্লিক কোরো না",
+"YES এ ক্লিক কর",
+"আমি কি তোর কোনো ক্ষতি করেছি?",
+"NO মানে তাহলে YES ধরে নিলাম?",
+"মায়া দয়া নেই?",
+"যা বলছি YES এ ক্লিক কর",
+"একবার ভেবে নে YES এ ক্লিক করে নে",
+"আমি কিন্তু ভালো ছেলে",
+"NO তে ক্লিক করা বেকার",
+"NO button কাজ করে না",
+"Just touch YES button"
+];
